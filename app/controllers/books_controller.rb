@@ -6,9 +6,10 @@
 
 	def create
 		@book = Book.new(book_params)
-		@book.user_id = current_user.id
 		@books = Book.all
-		if	@book.save
+		if	current_user.id != @book.user_id
+			redirect_to user_path(current_user.id)
+		elsif @book.save
 			flash[:notice] = "Book was successfully updated!"
 			redirect_to books_path
 		else

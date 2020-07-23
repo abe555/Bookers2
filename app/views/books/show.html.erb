@@ -77,8 +77,13 @@
                 <% end %>
               </th>
               <th><%= @book.body %></th>
-              <th><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-success" %></th>
-              <th><%= link_to "Destroy", book_path(@book.id), method: :delete, class:"btn btn-danger", "data-confirm" => "Are you sure?" %></th>
+
+              <% if current_user.id == @book.user_id %>
+
+                <th><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-success" %></th>
+                <th><%= link_to "Destroy", book_path(@book.id), method: :delete, class:"btn btn-danger", "data-confirm" => "Are you sure?" %></th>
+
+              <% end %>
             </tr>
           </table>
   			</div>
