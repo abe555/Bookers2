@@ -36,6 +36,7 @@
             </table>
             <div class="row">
                 <%= link_to sanitize('<i class="glyphicon glyphicon-wrench"></i>'), edit_user_path(current_user.id), class: "btn btn-default col-xs-12" %>
+
             </div>
           <!--User_profileここまで-->
           <!--投稿フォームここから-->
@@ -76,6 +77,8 @@
                 <% end %>
               </th>
               <th><%= @book.body %></th>
+              <th><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-success" %></th>
+              <th><%= link_to "Destroy", book_path(@book.id), method: :delete, class:"btn btn-danger", "data-confirm" => "Are you sure?" %></th>
             </tr>
           </table>
   			</div>

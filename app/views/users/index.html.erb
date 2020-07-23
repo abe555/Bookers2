@@ -3,13 +3,13 @@
   <div class="body">
     <div class="profile-containder">
 
-      <% if flash[:notice] %>
-        <div class="flash">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
-
       <div class="row col-xs-offset-1">
+
+        <% if flash[:notice] %>
+          <div class="flash">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
 
         <div class="col-xs-3">
           <!--user_profileここから-->
