@@ -1,5 +1,5 @@
 <body>
-
+ 
   <div class="body">
   	<div class="profile-containder">
 
@@ -43,7 +43,7 @@
 
             <h2>New books</h2>
 
-            <%= form_with model: @book, url: books_path, local: true do |form| %>
+            <%= form_with(model: @book, url: books_path, method: :new, local: true) do |form| %>
 
               <h4>Title</h4>
               <div class="row col-xs-12">
@@ -53,9 +53,7 @@
               <div class="row col-xs-12">
                 <%= form.text_area :body %>
               </div>
-              <% if @book.user.id == current_user.id %>
                 <%= form.submit "Create Book", class:"btn btn-primary col-xs-12" %>
-              <% end %>
             <% end %>
             <!--投稿フォームここまで-->
         </div>

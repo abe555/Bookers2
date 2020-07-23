@@ -41,7 +41,7 @@
                 <%= link_to sanitize('<i class="glyphicon glyphicon-book"></i> Books'),books_path %>
   						</li>
   						<li>
-                <%= link_to sanitize('<i class="glyphicon glyphicon-user"></i> logout'),destroy_user_session_path %>
+                <%= link_to sanitize('<i class="glyphicon glyphicon-user"></i> logout'),destroy_user_session_path, method: :delete %>
               </li>
 
   					<% else %>
